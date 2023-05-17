@@ -12,6 +12,7 @@
 </head>
 <body>
     <header>
+        <img src="media/list_icon.png" alt="list logo">
         <h1>Inköpslista</h1>
     </header>
     <main>
@@ -19,44 +20,12 @@
             <input type="text" id="varainput">
             <button type="button" id="varabutton">Lägg till</button>
         </div>
-        <table>
-            <tr><th>Vara</th></tr>
-
-            <tbody id="varatable"></tbody>
-            <!--DUMMY DATA DELETE AFTER JS-->
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Mjölk</td>
-                <td><i class="material-icons">edit</i></td>
-                <td><i class="material-icons">delete</i></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Smör</td>
-                <td><i class="material-icons">edit</i></td>
-                <td><i class="material-icons">delete</i></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Bröd</td>
-                <td><i class="material-icons">edit</i></td>
-                <td><i class="material-icons">delete</i></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Korv</td>
-                <td><i class="material-icons">edit</i></td>
-                <td><i class="material-icons">delete</i></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Frukt</td>
-                <td><i class="material-icons">edit</i></td>
-                <td><i class="material-icons">delete</i></td>
-            </tr>
-            <!--DUMMY DATA DELETE AFTER JS-->
-
+        
+        <table id="varor">
+            <caption>Varor</caption>
+            <tbody id="varorbody"></tbody>
         </table>
+
         <div id="raderabuttons">
             <button id="allabutton">Radera alla</button>
             <button id="valdabutton">Radera valda</button>
