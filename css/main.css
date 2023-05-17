@@ -1,0 +1,19 @@
+table{
+    margin:auto;
+}
+
+#raderabuttons{
+    display: flex;
+    justify-content: center;
+}
+
+#varaform{
+text-align: center;}
+
+button{
+    margin:10px;
+}
+
+header{
+    text-align: center;
+}
