@@ -1,15 +1,14 @@
 serverurl='php/';
-produkter=[{"id":1,"namn":"Smör","checked":0},
-            {"id":2,"namn":"Korv","checked":0},
-            {"id":3,"namn":"Bröd","checked":0}];
+
 
 window.onload = function(){
     getProducts();
+    document.getElementById("varabutton").onclick=function(){
+        saveProduct();
+    }
 }
 
 function getProducts(){
-    //radera vid fungerande php
-    appendProducts(produkter);
 
     fetch(serverurl+'hamtaAlla.php')
       .then(function (response) {
@@ -18,7 +17,7 @@ function getProducts(){
         }
       })
       .then(function (data) {
-        //appendProducts(data);
+        appendProducts(data);
       })
 }
 
