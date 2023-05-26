@@ -6,6 +6,12 @@ window.onload = function(){
     document.getElementById("varabutton").onclick=function(){
         saveProduct();
     }
+    document.getElementById("allabutton").onclick=function(){
+        deleteAllProducts();
+    }
+    document.getElementById("valdabutton").onclick=function(){
+        deleteCheckedProducts();
+    }
 }
 
 function getProducts(){
@@ -34,12 +40,16 @@ function appendProducts(data){
         let checkboxtd=document.createElement("td");
         let checkbox=document.createElement("input");
         checkbox.setAttribute("type", "checkbox");
+        if(data[i].checked){
+            checkbox.checked=1;
+        }
         checkbox.onclick=function(){
             checkProduct(data[i].id);
         }
         checkboxtd.appendChild(checkbox);
 
         let texttd=document.createElement("td");
+        texttd.id="vara"+data[i].id;
         texttd.innerHTML=data[i].namn;
 
         let redigeratd=document.createElement("td");
@@ -47,7 +57,7 @@ function appendProducts(data){
         redigeraicon.classList.add("material-icons");
         redigeraicon.innerHTML="edit";
         redigeraicon.onclick=function(){
-            editProduct(data[i].id);
+            editVaraForm(data[i].id);
         }
         redigeratd.appendChild(redigeraicon);
 
@@ -56,7 +66,7 @@ function appendProducts(data){
         raderaicon.classList.add("material-icons");
         raderaicon.innerHTML="delete";
         raderaicon.onclick=function(){
-            deleteProduct(data[i].id);
+            deleteProduct(data[i].id, data[i].namn);
         }
         raderatd.appendChild(raderaicon);
 
